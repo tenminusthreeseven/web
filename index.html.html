@@ -57,9 +57,8 @@
     }
     body.light-theme h2 { color: var(--muted-light); }
 
-    .section {
-      margin-top: 60px;
-    }
+    .section { margin-top: 60px; }
+
     .section h3 {
       font-size: 1.5rem;
       margin-bottom: 18px;
@@ -82,9 +81,7 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .skills-boxes a {
-      text-decoration: none;
-    }
+    .skills-boxes a { text-decoration: none; }
 
     .skill {
       padding: 10px 18px;
@@ -92,21 +89,19 @@
       background: linear-gradient(135deg, #6c63ff, #ab47bc);
       color: white;
       font-size: 0.95rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: 0.3s;
     }
     .skill:hover { transform: translateY(-5px); }
 
-    body.light-theme .skill {
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      color: #000;
+    .project-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 16px;
+      flex-wrap: wrap;
     }
 
-    /* Project button */
-    .download-btn {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 12px 20px;
+    .project-btn {
+      padding: 12px 22px;
       border-radius: 30px;
       background: linear-gradient(135deg, #6c63ff, #8e7cff);
       color: white;
@@ -114,16 +109,15 @@
       font-weight: 500;
       transition: 0.3s;
     }
-    .download-btn i { margin-right: 8px; }
-    .download-btn:hover { transform: scale(1.05); }
+    .project-btn:hover { transform: scale(1.05); }
 
-    /* Bottom buttons */
+    /* Bottom Buttons */
     .bottom-btn-group {
       position: fixed;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 2;
+      z-index: 10;
     }
     .bottom-btn-box {
       display: flex;
@@ -146,6 +140,7 @@
     }
     .circle-btn:hover { transform: scale(1.2); }
 
+    /* Splash */
     #splash {
       position: fixed;
       inset: 0;
@@ -154,7 +149,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: bold;
       z-index: 9999;
     }
@@ -163,6 +158,7 @@
 </head>
 
 <body>
+
 <div id="splash">Loading...</div>
 <canvas id="star-canvas"></canvas>
 
@@ -171,7 +167,6 @@
     <h1>Hi,<br>Adarsh here 👋</h1>
     <h2>"Sometimes you don't know the recipe your destiny will"</h2>
 
-    <!-- About -->
     <div class="section">
       <h3>About Me</h3>
       <div class="card">
@@ -180,7 +175,6 @@
       </div>
     </div>
 
-    <!-- Education -->
     <div class="section">
       <h3>Education</h3>
       <div class="card">
@@ -189,56 +183,81 @@
       </div>
     </div>
 
-    <!-- Skills -->
     <div class="section">
       <h3>Skills</h3>
       <div class="card">
         <div class="skills-boxes">
-          <a class="skill" href="#">C</a>
-          <a class="skill" href="#">Python</a>
-          <a class="skill" href="#">HTML</a>
-          <a class="skill" href="#">CSS</a>
-          <a class="skill" href="#">JavaScript</a>
-          <a class="skill" href="#">Java</a>
-          <a class="skill" href="#">DSA</a>
-          <a class="skill" href="#">DevOps</a>
-          <a class="skill" href="#">AWS</a>
-          <a class="skill" href="#">DBMS</a>
+          <span class="skill">C</span>
+          <span class="skill">Python</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">DSA</span>
+          <span class="skill">DevOps</span>
+          <span class="skill">AWS</span>
         </div>
       </div>
     </div>
 
-    <!-- Projects -->
+    <!-- PROJECT SECTION -->
     <div class="section">
       <h3>Projects</h3>
-
       <div class="card">
         <h4>🚀 LeetPush – LeetCode to GitHub Extension</h4>
         <p>
           LeetPush is a browser extension that automatically pushes your solved
           LeetCode problems directly to your GitHub repository.  
-          It helps developers maintain a clean revision history and showcase
-          consistent problem-solving activity.
-        </p>
-        <p>
-          Built using JavaScript, Chrome Extension APIs, and GitHub REST APIs.
+          It helps developers revise solutions and maintain a consistent GitHub
+          contribution history.
         </p>
 
-        <a href="leetpush-extension.zip" download class="download-btn">
-          <i class="fas fa-download"></i> Download ZIP
-        </a>
+        <div class="project-buttons">
+          <a href="leetpush-extension.zip" download class="project-btn">
+            <i class="fas fa-download"></i> Download ZIP
+          </a>
+
+          <a href="https://docs.google.com/document/d/1bTzQTQwOpa2NHxcyEU_z9--T550twgz1J3XTiZmIWL8/edit?usp=sharing"
+             target="_blank" class="project-btn">
+            <i class="fas fa-book"></i> How to Use
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<script>
-  const splash = document.getElementById("splash");
-  setTimeout(() => {
-    splash.style.display = "none";
-    document.getElementById("main-content").style.display = "block";
-  }, 2000);
+<!-- Bottom Buttons -->
+<div class="bottom-btn-group">
+  <div class="bottom-btn-box">
+    <button class="circle-btn"><i class="fas fa-home"></i></button>
+    <button class="circle-btn" onclick="location.href='mailto:anshulsinghdhh@gmail.com'"><i class="fas fa-envelope"></i></button>
+    <button class="circle-btn" onclick="window.open('https://github.com/tenminusthreeseven','_blank')"><i class="fab fa-github"></i></button>
+    <button class="circle-btn" onclick="window.open('https://www.linkedin.com/in/adarsh-kumar-9abaab327/','_blank')"><i class="fab fa-linkedin"></i></button>
+   <button class="circle-btn" 
+        onclick="window.location.href='skills.html.html'" 
+        title="Connect with me">
+  <i class="fas fa-user-plus"></i>
+  
+  
+  </div>
+</div>
 
+<script>
+  /* Theme toggle can be added later if you want */
+
+  // Splash greetings animation
+  const greetings = ["नमस्ते!", "வணக்கம்!", "నమస్తే!", "নমস্কার!", "Bonjour!", "Hola!", "Hello!", "こんにちは!", "你好!"];
+  const splash = document.getElementById("splash");
+  let i = 0;
+
+  const interval = setInterval(() => {
+    splash.textContent = greetings[i++];
+    if (i === greetings.length) {
+      clearInterval(interval);
+      splash.style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }
+  }, 300);
+
+  // Star animation
   const canvas = document.getElementById("star-canvas");
   const ctx = canvas.getContext("2d");
   let stars = [];
@@ -246,10 +265,10 @@
   function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    stars = Array.from({ length: 250 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5,
+    stars = Array.from({length: 250}, () => ({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+      r: Math.random()*1.5,
       a: Math.random()
     }));
   }
@@ -257,16 +276,17 @@
   resize();
 
   function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     stars.forEach(s => {
       ctx.fillStyle = `rgba(255,255,255,${s.a})`;
       ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
       ctx.fill();
     });
     requestAnimationFrame(animate);
   }
   animate();
 </script>
+
 </body>
 </html>
