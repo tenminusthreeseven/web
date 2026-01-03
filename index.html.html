@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adarsh's Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -34,7 +35,6 @@
       z-index: -1;
     }
 
-    /* Container */
     .container {
       max-width: 950px;
       margin: auto;
@@ -43,12 +43,10 @@
       z-index: 1;
     }
 
-    /* Headings */
     h1 {
       font-family: 'Merriweather', serif;
       font-size: 3rem;
       margin: 0;
-      line-height: 1.3;
     }
 
     h2 {
@@ -59,56 +57,43 @@
     }
     body.light-theme h2 { color: var(--muted-light); }
 
-    /* Sections */
     .section {
       margin-top: 60px;
     }
     .section h3 {
       font-size: 1.5rem;
-      font-weight: 600;
       margin-bottom: 18px;
       border-left: 5px solid var(--accent);
       padding-left: 12px;
     }
 
-    /* Card blocks */
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px 25px;
-      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      padding: 22px 26px;
+      border-radius: 16px;
       margin-bottom: 20px;
       backdrop-filter: blur(10px);
       transition: 0.3s;
     }
     .card:hover { transform: translateY(-4px); }
 
-    .section p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin-bottom: 15px;
-    }
-
-    /* Skills Grid */
     .skills-boxes {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
     .skills-boxes a {
-  text-decoration: none;   /* removes underline */
-  display: inline-block;   /* makes it behave like a button */
-}
+      text-decoration: none;
+    }
 
     .skill {
       padding: 10px 18px;
       border-radius: 14px;
       background: linear-gradient(135deg, #6c63ff, #ab47bc);
       color: white;
-      font-weight: 500;
       font-size: 0.95rem;
-      transition: 0.3s;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: 0.3s;
     }
     .skill:hover { transform: translateY(-5px); }
 
@@ -117,7 +102,22 @@
       color: #000;
     }
 
-    /* Bottom Button Group */
+    /* Project button */
+    .download-btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 20px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #6c63ff, #8e7cff);
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .download-btn i { margin-right: 8px; }
+    .download-btn:hover { transform: scale(1.05); }
+
+    /* Bottom buttons */
     .bottom-btn-group {
       position: fixed;
       bottom: 20px;
@@ -131,8 +131,7 @@
       padding: 12px 18px;
       border-radius: 32px;
       backdrop-filter: blur(8px);
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.1);
     }
     .circle-btn {
       width: 44px;
@@ -142,16 +141,11 @@
       background: #333;
       color: white;
       font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s;
       cursor: pointer;
+      transition: transform 0.3s;
     }
     .circle-btn:hover { transform: scale(1.2); }
-    .light-theme .circle-btn { background: black; color: white; }
 
-    /* Splash screen */
     #splash {
       position: fixed;
       inset: 0;
@@ -169,142 +163,110 @@
 </head>
 
 <body>
-  <!-- Splash Animation -->
-  <div id="splash">Loading...</div>
+<div id="splash">Loading...</div>
+<canvas id="star-canvas"></canvas>
 
-  <!-- Star Canvas -->
-  <canvas id="star-canvas"></canvas>
+<div id="main-content">
+  <div class="container">
+    <h1>Hi,<br>Adarsh here 👋</h1>
+    <h2>"Sometimes you don't know the recipe your destiny will"</h2>
 
-  <!-- Main Content -->
-  <div id="main-content">
-    <div class="container">
-      <h1>Hi, <br>Adarsh here 👋</h1>
-      <h2>"Sometimes you don't know the recipe your destiny will"</h2>
+    <!-- About -->
+    <div class="section">
+      <h3>About Me</h3>
+      <div class="card">
+        <p>I’m Adarsh from Bundelkhand, Uttar Pradesh 🌏, passionate about coding, DevOps and building real-world tools.</p>
+        <p>I also explore creativity through rap writing and music 🎶.</p>
+      </div>
+    </div>
 
-      <!-- About Section -->
-      <div class="section">
-        <h3>About Me</h3>
-        <div class="card">
-          <p>I’m Adarsh, a kid from Bundelkhand, Uttar Pradesh 🌏 who’s passionate about coding, DevOps, and breaking into the IT sector.</p>
-          <p>Sometimes I also explore creativity through rap writing and music production 🎶.</p>
+    <!-- Education -->
+    <div class="section">
+      <h3>Education</h3>
+      <div class="card">
+        <p>📘 Senior Secondary</p>
+        <p>🎓 B.Tech IT — KIET Group of Institutions</p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+      <h3>Skills</h3>
+      <div class="card">
+        <div class="skills-boxes">
+          <a class="skill" href="#">C</a>
+          <a class="skill" href="#">Python</a>
+          <a class="skill" href="#">HTML</a>
+          <a class="skill" href="#">CSS</a>
+          <a class="skill" href="#">JavaScript</a>
+          <a class="skill" href="#">Java</a>
+          <a class="skill" href="#">DSA</a>
+          <a class="skill" href="#">DevOps</a>
+          <a class="skill" href="#">AWS</a>
+          <a class="skill" href="#">DBMS</a>
         </div>
       </div>
+    </div>
 
-      <!-- Education Section -->
-      <div class="section">
-        <h3>Education</h3>
-        <div class="card">
-          <p>📘 Senior Secondary</p>
-          <p>🎓 B.Tech IT — KIET Group of Institutions</p>
-        </div>
+    <!-- Projects -->
+    <div class="section">
+      <h3>Projects</h3>
+
+      <div class="card">
+        <h4>🚀 LeetPush – LeetCode to GitHub Extension</h4>
+        <p>
+          LeetPush is a browser extension that automatically pushes your solved
+          LeetCode problems directly to your GitHub repository.  
+          It helps developers maintain a clean revision history and showcase
+          consistent problem-solving activity.
+        </p>
+        <p>
+          Built using JavaScript, Chrome Extension APIs, and GitHub REST APIs.
+        </p>
+
+        <a href="leetpush-extension.zip" download class="download-btn">
+          <i class="fas fa-download"></i> Download ZIP
+        </a>
       </div>
-
-      <!-- Skills Section -->
-      <!-- Skills Section -->
-<div class="section">
-  <h3>Skills</h3>
-  <div class="card">
-    <div class="skills-boxes">
-      <a class="skill" href="https://devdocs.io/c/" target="_blank">C</a>
-      <a class="skill" href="https://docs.python.org/3/" target="_blank">Python</a>
-      <a class="skill" href="https://developer.mozilla.org/docs/Web/HTML" target="_blank">HTML</a>
-      <a class="skill" href="https://developer.mozilla.org/docs/Web/CSS" target="_blank">CSS</a>
-      <a class="skill" href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank">JavaScript</a>
-      <a class="skill" href="https://docs.oracle.com/en/java/" target="_blank">Java</a>
-      <a class="skill" href="https://www.geeksforgeeks.org/data-structures/" target="_blank">Data Structures</a>
-      <a class="skill" href="https://ethereum.org/en/developers/docs/" target="_blank">Blockchain</a>
-      <a class="skill" href="https://docs.docker.com/" target="_blank">DevOps</a>
-      <a class="skill" href="https://dev.mysql.com/doc/" target="_blank">MySQL</a>
-      <a class="skill" href="https://www.mongodb.com/docs/" target="_blank">MongoDB</a>
-      <a class="skill" href="https://www.tutorialspoint.com/dbms/index.htm" target="_blank">DBMS</a>
-      <a class="skill" href="https://docs.aws.amazon.com/" target="_blank">AWS</a>
     </div>
   </div>
 </div>
 
+<script>
+  const splash = document.getElementById("splash");
+  setTimeout(() => {
+    splash.style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+  }, 2000);
 
-  <!-- Bottom Buttons -->
-  <div class="bottom-btn-group">
-    <div class="bottom-btn-box">
-      <button class="circle-btn" title="Home"><i class="fas fa-home"></i></button>
-      <button class="circle-btn" title="Email" onclick="window.location.href='mailto:anshulsinghdhh@gmail.com'"><i class="fas fa-envelope"></i></button>
-      <button class="circle-btn" title="Social Links" onclick="window.location.href='skills.html.html'"><i class="fas fa-share-alt"></i></button>
-      <button class="circle-btn" title="GitHub" onclick="window.open('https://github.com/tenminusthreeseven', '_blank')"><i class="fab fa-github"></i></button>
-      <button class="circle-btn" title="LinkedIn" onclick="window.open('https://www.linkedin.com/in/adarsh-kumar-9abaab327/', '_blank')"><i class="fab fa-linkedin"></i></button>
-      <button class="circle-btn" onclick="toggleTheme()" title="Toggle Theme"><i id="theme-icon" class="fas fa-moon"></i></button>
-    </div>
-  </div>
+  const canvas = document.getElementById("star-canvas");
+  const ctx = canvas.getContext("2d");
+  let stars = [];
 
-  <script>
-    // Theme toggle
-    function toggleTheme() {
-      const body = document.body;
-      const icon = document.getElementById("theme-icon");
-      body.classList.toggle("light-theme");
-      if (body.classList.contains("light-theme")) {
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-      } else {
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-      }
-    }
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = Array.from({ length: 250 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5,
+      a: Math.random()
+    }));
+  }
+  window.addEventListener("resize", resize);
+  resize();
 
-    // Splash greetings
-    const greetings = ["नमस्ते!", "வணக்கம்!", "నమస్తే!", "ਨਮਸਤੇ!", "নমস্কার!", "ନମସ୍କାର!", "નમસ્તે!", "ನಮಸ್ಕಾರ!", "നമസ്‌കാരം!", "নমস্কাৰ!", "Hallo!", "Bonjour!", "Hola!", "こんにちは!", "你好!", "Здравствуйте!"];
-    const splash = document.getElementById("splash");
-    let i = 0;
-    const interval = setInterval(() => {
-      splash.textContent = greetings[i];
-      i++;
-      if (i >= greetings.length) {
-        clearInterval(interval);
-        splash.style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-      }
-    }, 330);
-
-    // Star canvas
-    const canvas = document.getElementById("star-canvas");
-    const ctx = canvas.getContext("2d");
-    let stars = [];
-    class Star {
-      constructor() { this.reset(); }
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.radius = Math.random() * 1.5 + 0.5;
-        this.alpha = Math.random();
-        this.delta = Math.random() * 0.03 + 0.005;
-      }
-      update() {
-        this.alpha += this.delta;
-        if (this.alpha <= 0 || this.alpha >= 1) this.delta = -this.delta;
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
-        ctx.fill();
-      }
-    }
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      stars = [];
-      for (let i = 0; i < 300; i++) stars.push(new Star());
-    }
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let star of stars) {
-        star.update();
-        star.draw();
-      }
-      requestAnimationFrame(animate);
-    }
-    animate();
-  </script>
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(s => {
+      ctx.fillStyle = `rgba(255,255,255,${s.a})`;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
 </body>
 </html>
